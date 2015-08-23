@@ -1,0 +1,100 @@
+<div class="page-header">
+  <h3>Set Up #<%= @set_up.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Track</dt>
+      <dd><%= @set_up.track_id %></dd>
+
+      <dt>Laptime</dt>
+      <dd><%= @set_up.laptime %></dd>
+
+      <dt>Rider weight</dt>
+      <dd><%= @set_up.rider_weight %></dd>
+
+      <dt>Bike</dt>
+      <dd><%= @set_up.bike_id %></dd>
+
+      <dt>Comment</dt>
+      <dd><%= @set_up.comment %></dd>
+
+      <dt>Subjective rating</dt>
+      <dd><%= @set_up.subjective_rating %></dd>
+
+      <dt>Conditions</dt>
+      <dd><%= @set_up.conditions %></dd>
+
+      <dt>Track temperature</dt>
+      <dd><%= @set_up.track_temperature %></dd>
+
+      <dt>Ambient temperature</dt>
+      <dd><%= @set_up.ambient_temperature %></dd>
+
+      <dt>Rear tire pressure</dt>
+      <dd><%= @set_up.rear_tire_pressure %></dd>
+
+      <dt>Front tire pressure</dt>
+      <dd><%= @set_up.front_tire_pressure %></dd>
+
+      <dt>Rear tire</dt>
+      <dd><%= @set_up.rear_tire %></dd>
+
+      <dt>Front tire</dt>
+      <dd><%= @set_up.front_tire %></dd>
+
+      <dt>Steering head angle</dt>
+      <dd><%= @set_up.steering_head_angle %></dd>
+
+      <dt>Front suspension preload</dt>
+      <dd><%= @set_up.front_suspension_preload %></dd>
+
+      <dt>Front suspension compression</dt>
+      <dd><%= @set_up.front_suspension_compression %></dd>
+
+      <dt>Front suspension damping</dt>
+      <dd><%= @set_up.front_suspension_damping %></dd>
+
+      <dt>Front suspension spring rate</dt>
+      <dd><%= @set_up.front_suspension_spring_rate %></dd>
+
+      <dt>Front suspension brand</dt>
+      <dd><%= @set_up.front_suspension_brand %></dd>
+
+      <dt>Rear suspension preload</dt>
+      <dd><%= @set_up.rear_suspension_preload %></dd>
+
+      <dt>Rear suspension compression</dt>
+      <dd><%= @set_up.rear_suspension_compression %></dd>
+
+      <dt>Rear suspension damping</dt>
+      <dd><%= @set_up.rear_suspension_damping %></dd>
+
+      <dt>Rear suspension spring rate</dt>
+      <dd><%= @set_up.rear_suspension_spring_rate %></dd>
+
+      <dt>Rear suspension static sag</dt>
+      <dd><%= @set_up.rear_suspension_static_sag %></dd>
+
+      <dt>Rear suspension sag</dt>
+      <dd><%= @set_up.rear_suspension_sag %></dd>
+
+      <dt>Rear suspension brand</dt>
+      <dd><%= @set_up.rear_suspension_brand %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/set_ups" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/set_ups/<%= @set_up.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_set_up/<%= @set_up.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

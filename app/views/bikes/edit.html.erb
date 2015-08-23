@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @bike.errors.any? %>
+  <% @bike.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Bike #<%= @bike.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_bike/<%= @bike.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @bike.user_id %>">
+      </div>
+
+      <!-- Label and input for year -->
+      <div class="form-group">
+        <label for="year" class="control-label">
+          Year
+        </label>
+
+        <input type="text" id="year" name="year" placeholder="Year" class="form-control" value="<%= @bike.year %>">
+      </div>
+
+      <!-- Label and input for model -->
+      <div class="form-group">
+        <label for="model" class="control-label">
+          Model
+        </label>
+
+        <input type="text" id="model" name="model" placeholder="Model" class="form-control" value="<%= @bike.model %>">
+      </div>
+
+      <!-- Label and input for manufacturer -->
+      <div class="form-group">
+        <label for="manufacturer" class="control-label">
+          Manufacturer
+        </label>
+
+        <input type="text" id="manufacturer" name="manufacturer" placeholder="Manufacturer" class="form-control" value="<%= @bike.manufacturer %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Bike
+      </button>
+      or
+      <a href="/bikes/<%= @bike.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

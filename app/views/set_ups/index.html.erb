@@ -1,0 +1,78 @@
+<div class="page-header">
+  <h1>
+    Set ups
+    <a href="/set_ups/new" class="btn btn-lg btn-success">New Set up</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Track</th>
+        <th>Laptime</th>
+        <th>Rider weight</th>
+        <th>Bike</th>
+        <th>Comment</th>
+        <th>Subjective rating</th>
+        <th>Conditions</th>
+        <th>Track temperature</th>
+        <th>Ambient temperature</th>
+        <th>Rear tire pressure</th>
+        <th>Front tire pressure</th>
+        <th>Rear tire</th>
+        <th>Front tire</th>
+        <th>Steering head angle</th>
+        <th>Front suspension preload</th>
+        <th>Front suspension compression</th>
+        <th>Front suspension damping</th>
+        <th>Front suspension spring rate</th>
+        <th>Front suspension brand</th>
+        <th>Rear suspension preload</th>
+        <th>Rear suspension compression</th>
+        <th>Rear suspension damping</th>
+        <th>Rear suspension spring rate</th>
+        <th>Rear suspension static sag</th>
+        <th>Rear suspension sag</th>
+        <th>Rear suspension brand</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @set_ups.each do |set_up| %>
+      <tr>
+        <td><%= set_up.track_id %></td>
+        <td><%= set_up.laptime %></td>
+        <td><%= set_up.rider_weight %></td>
+        <td><%= set_up.bike_id %></td>
+        <td><%= set_up.comment %></td>
+        <td><%= set_up.subjective_rating %></td>
+        <td><%= set_up.conditions %></td>
+        <td><%= set_up.track_temperature %></td>
+        <td><%= set_up.ambient_temperature %></td>
+        <td><%= set_up.rear_tire_pressure %></td>
+        <td><%= set_up.front_tire_pressure %></td>
+        <td><%= set_up.rear_tire %></td>
+        <td><%= set_up.front_tire %></td>
+        <td><%= set_up.steering_head_angle %></td>
+        <td><%= set_up.front_suspension_preload %></td>
+        <td><%= set_up.front_suspension_compression %></td>
+        <td><%= set_up.front_suspension_damping %></td>
+        <td><%= set_up.front_suspension_spring_rate %></td>
+        <td><%= set_up.front_suspension_brand %></td>
+        <td><%= set_up.rear_suspension_preload %></td>
+        <td><%= set_up.rear_suspension_compression %></td>
+        <td><%= set_up.rear_suspension_damping %></td>
+        <td><%= set_up.rear_suspension_spring_rate %></td>
+        <td><%= set_up.rear_suspension_static_sag %></td>
+        <td><%= set_up.rear_suspension_sag %></td>
+        <td><%= set_up.rear_suspension_brand %></td>
+        <td>
+          <a href="/set_ups/<%= set_up.id %>" class="btn btn-primary">Show</a>
+          <a href="/set_ups/<%= set_up.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_set_up/<%= set_up.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
