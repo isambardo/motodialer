@@ -37,34 +37,139 @@
         <th>Actions</th>
       </tr>
 
+      <% @comparison_set_up = current_user.set_ups.first %>
+
       <% current_user.set_ups.each do |set_up| %>
       <tr>
-        <td><%= set_up.track.name %></td>
-        <td><%= set_up.laptime %></td>
-        <td><%= set_up.rider_weight %></td>
-        <td><%= set_up.bike.model %></td>
+
+        <% if set_up.track_id == @comparison_set_up.track_id %>
+          <td><%= set_up.track.name %></td>
+        <% else %>
+          <td><b><%= set_up.track.name %></b></td>
+        <% end %>
+        <% if set_up.laptime == @comparison_set_up.laptime %>
+          <td><%= set_up.laptime %></td>
+        <% else %>
+          <td><b><%= set_up.laptime%></b></td>
+        <% end %>
+        <% if set_up.rider_weight == @comparison_set_up.rider_weight %>
+          <td><%= set_up.rider_weight %></td>
+        <% else %>
+          <td><b><%= set_up.rider_weight %></b></td>
+        <% end %>
+        <% if set_up.bike.model == @comparison_set_up.bike.model %>
+          <td><%= set_up.bike.model %></td>
+        <% else %>
+          <td><b><%= set_up.bike.model %></b></td>
+        <% end %>
         <td><%= set_up.comment %></td>
-        <td><%= set_up.subjective_rating %></td>
-        <td><%= set_up.conditions %></td>
-        <td><%= set_up.track_temperature %></td>
-        <td><%= set_up.ambient_temperature %></td>
-        <td><%= set_up.rear_tire_pressure %></td>
-        <td><%= set_up.front_tire_pressure %></td>
-        <td><%= set_up.rear_tire %></td>
-        <td><%= set_up.front_tire %></td>
-        <td><%= set_up.steering_head_angle %></td>
-        <td><%= set_up.front_suspension_preload %></td>
-        <td><%= set_up.front_suspension_compression %></td>
-        <td><%= set_up.front_suspension_damping %></td>
-        <td><%= set_up.front_suspension_spring_rate %></td>
-        <td><%= set_up.front_suspension_brand %></td>
-        <td><%= set_up.rear_suspension_preload %></td>
-        <td><%= set_up.rear_suspension_compression %></td>
-        <td><%= set_up.rear_suspension_damping %></td>
-        <td><%= set_up.rear_suspension_spring_rate %></td>
-        <td><%= set_up.rear_suspension_static_sag %></td>
-        <td><%= set_up.rear_suspension_sag %></td>
-        <td><%= set_up.rear_suspension_brand %></td>
+
+        <% if set_up.subjective_rating == @comparison_set_up.subjective_rating %>
+          <td><%= set_up.subjective_rating %></td>
+        <% else %>
+          <td><b><%= set_up.subjective_rating %></b></td>
+        <% end %>
+        <% if set_up.conditions == @comparison_set_up.conditions %>
+          <td><%= set_up.conditions %></td>
+        <% else %>
+          <td><b><%= set_up.conditions %></b></td>
+        <% end %>
+        <% if set_up.track_temperature == @comparison_set_up.track_temperature %>
+          <td><%= set_up.track_temperature %></td>
+        <% else %>
+          <td><b><%= set_up.track_temperature %></b></td>
+        <% end %>
+        <% if set_up.ambient_temperature == @comparison_set_up.ambient_temperature %>
+          <td><%= set_up.ambient_temperature %></td>
+        <% else %>
+          <td><b><%= set_up.ambient_temperature %></b></td>
+        <% end %>
+        <% if set_up.rear_tire_pressure == @comparison_set_up.rear_tire_pressure %>
+          <td><%= set_up.rear_tire_pressure %></td>
+        <% else %>
+          <td><b><%= set_up.rear_tire_pressure %></b></td>
+        <% end %>
+        <% if set_up.front_tire_pressure == @comparison_set_up.front_tire_pressure %>
+          <td><%= set_up.front_tire_pressure %></td>
+        <% else %>
+          <td><b><%= set_up.front_tire_pressure %></b></td>
+        <% end %>
+        <% if set_up.rear_tire == @comparison_set_up.rear_tire %>
+          <td><%= set_up.rear_tire %></td>
+        <% else %>
+          <td><b><%= set_up.rear_tire %></b></td>
+        <% end %>
+        <% if set_up.front_tire == @comparison_set_up.front_tire %>
+          <td><%= set_up.front_tire %></td>
+        <% else %>
+          <td><b><%= set_up.front_tire %></b></td>
+        <% end %>
+        <% if set_up.steering_head_angle == @comparison_set_up.steering_head_angle %>
+          <td><%= set_up.steering_head_angle %></td>
+        <% else %>
+          <td><b><%= set_up.steering_head_angle %></b></td>
+        <% end %>
+        <% if set_up.front_suspension_preload == @comparison_set_up.front_suspension_preload %>
+          <td><%= set_up.front_suspension_preload %></td>
+        <% else %>
+          <td><b><%= set_up.front_suspension_preload %></b></td>
+        <% end %>
+        <% if set_up.front_suspension_compression == @comparison_set_up.front_suspension_compression %>
+          <td><%= set_up.front_suspension_compression %></td>
+        <% else %>
+          <td><b><%= set_up.front_suspension_compression %></b></td>
+        <% end %>
+        <% if set_up.front_suspension_damping == @comparison_set_up.front_suspension_damping %>
+          <td><%= set_up.front_suspension_damping %></td>
+        <% else %>
+          <td><b><%= set_up.front_suspension_damping %></b></td>
+        <% end %>
+        <% if set_up.front_suspension_spring_rate == @comparison_set_up.front_suspension_spring_rate %>
+          <td><%= set_up.front_suspension_spring_rate %></td>
+        <% else %>
+          <td><b><%= set_up.front_suspension_spring_rate %></b></td>
+        <% end %>
+        <% if set_up.front_suspension_brand == @comparison_set_up.front_suspension_brand %>
+          <td><%= set_up.front_suspension_brand %></td>
+        <% else %>
+          <td><b><%= set_up.front_suspension_brand %></b></td>
+        <% end %>
+        <% if set_up.rear_suspension_preload == @comparison_set_up.rear_suspension_preload %>
+          <td><%= set_up.rear_suspension_preload %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_preload %></b></td>
+        <% end %>
+        <% if set_up.rear_suspension_compression == @comparison_set_up.rear_suspension_compression %>
+          <td><%= set_up.rear_suspension_compression %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_compression %></b></td>
+        <% end %>
+        <% if set_up.rear_suspension_damping == @comparison_set_up.rear_suspension_damping %>
+          <td><%= set_up.rear_suspension_damping %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_damping %></b></td>
+        <% end %>
+        <% if set_up.rear_suspension_spring_rate == @comparison_set_up.rear_suspension_spring_rate %>
+          <td><%= set_up.rear_suspension_spring_rate %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_spring_rate %></b></td>
+        <% end %>
+        <% if set_up.rear_suspension_static_sag == @comparison_set_up.rear_suspension_static_sag %>
+          <td><%= set_up.rear_suspension_static_sag %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_static_sag %></b></td>
+        <% end %>
+        <% if set_up.rear_suspension_sag == @comparison_set_up.rear_suspension_sag %>
+          <td><%= set_up.rear_suspension_sag %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_sag %></b></td>
+        <% end %>
+        <% if set_up.rear_suspension_brand == @comparison_set_up.rear_suspension_brand %>
+          <td><%= set_up.rear_suspension_brand %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_brand %></b></td>
+        <% end %>
+        <% @comparison_set_up = set_up %>
         <td>
           <a href="/set_ups/<%= set_up.id %>" class="btn btn-primary">Show</a>
           <a href="/set_ups/<%= set_up.id %>/edit" class="btn btn-warning">Edit</a>
@@ -100,7 +205,7 @@
         <label for="track_id" class="control-label">
           Track
         </label>
-         <%= select_tag(:track_id, options_from_collection_for_select(Track.all, :id, :name, @set_up.track_id), :class => "form-control") %>
+         <%= select_tag(:track_id, options_from_collection_for_select(Track.all, :id, :name, @last_set_up.track_id), :class => "form-control") %>
 
 
         <!-- <input type="text" id="track_id" name="track_id" placeholder="Track" class="form-control" value="<%= @set_up.track_id %>"> -->
