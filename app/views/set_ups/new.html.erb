@@ -38,6 +38,14 @@
       <!--   <input type="text" id="bike_id" name="bike_id" placeholder="Bike" class="form-control" value="<%= @set_up.bike_id %>"> -->
       </div>
 
+      <!-- Label and input for conditions -->
+      <div class="form-group">
+        <label for="conditions" class="control-label">
+          Conditions
+        </label>
+        <input type="text" id="conditions" name="conditions" placeholder="Conditions" class="form-control" value="<%= @set_up.conditions %>">
+      </div>
+
       <!-- Label and input for laptime -->
       <div class="form-group">
         <label for="laptime" class="control-label">
@@ -76,14 +84,7 @@
         <input type="text" id="subjective_rating" name="subjective_rating" placeholder="Subjective rating" class="form-control" value="<%= @set_up.subjective_rating %>">
       </div>
 
-      <!-- Label and input for conditions -->
-      <div class="form-group">
-        <label for="conditions" class="control-label">
-          Conditions
-        </label>
 
-        <input type="text" id="conditions" name="conditions" placeholder="Conditions" class="form-control" value="<%= @set_up.conditions %>">
-      </div>
 
       <!-- Label and input for track_temperature -->
       <div class="form-group">

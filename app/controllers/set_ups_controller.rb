@@ -1,6 +1,7 @@
-class SetUpsController < ApplicationController
+ class SetUpsController < ApplicationController
   def index
     @set_ups = SetUp.all
+    @user = current_user
   end
 
   def show

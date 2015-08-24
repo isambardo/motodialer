@@ -38,7 +38,7 @@
         <th>Actions</th>
       </tr>
 
-      <% @set_ups.each do |set_up| %>
+      <% current_user.set_ups.each do |set_up| %>
       <tr>
         <td><%= set_up.track_id %></td>
         <td><%= set_up.laptime %></td>
