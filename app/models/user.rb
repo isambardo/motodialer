@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true
   validates :first_name, :presence => true
   validates :lastname, :presence => true
+  validates :bio, length: { maximum: 200,
+    too_long: "%{count} characters is the maximum allowed" }
 end
