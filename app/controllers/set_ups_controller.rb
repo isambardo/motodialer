@@ -104,6 +104,10 @@
     render 'find'
   end
 
+  def readonly
+    render 'readonly'
+  end
+
   def destroy
     @set_up = SetUp.find(params[:id])
 

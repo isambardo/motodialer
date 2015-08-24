@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  #Read only page on other users:
 
+  get "/user/:id", :controller => "set_ups", :action => "readonly"
 
   # Routes for the Track resource:
   # CREATE
