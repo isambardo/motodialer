@@ -52,6 +52,10 @@ Rails.application.routes.draw do
   get "/delete_bike/:id", :controller => "bikes", :action => "destroy"
   #------------------------------
 
+  # Routes for the Search resource:
+
+  get "/search", :controller => "search", :action => "find"
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
