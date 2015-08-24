@@ -15,21 +15,21 @@
         <th>Note</th>
         <th>Wt.</th>
         <th>Cnd.</th>
-        <th>Trk temp.</th>
-        <th>Air temp.</th>
+        <th>Trk F&deg;</th>
+        <th>Air F&deg;</th>
         <th>PSI (R)</th>
         <th>PSI (F)</th>
         <th>Tire (R)</th>
         <th>Tire (F)</th>
         <th>Hd ang.</th>
-        <th>Prl. (F)</th>
-        <th>Cmp. (F)</th>
-        <th>Dmp. (F)</th>
+        <th>Pl. (F)</th>
+        <th>Cp. (F)</th>
+        <th>Dp. (F)</th>
         <th>Spr. (F)</th>
         <th>Frk.</th>
-        <th>Prl. (R)</th>
-        <th>Cmp. (R)</th>
-        <th>Dmp (R)</th>
+        <th>Pl. (R)</th>
+        <th>Cp. (R)</th>
+        <th>Dp. (R)</th>
         <th>Spr. (R)</th>
         <th>St. sag</th>
         <th>Sag</th>
@@ -174,9 +174,12 @@
         <% end %>
         <% @comparison_set_up = set_up %>
         <td>
+          <div class="btn-group btn-group-xs" role="group" aria-label="...">
+
           <!-- <a href="/set_ups/<%= set_up.id %>" class="btn btn-primary">Show</a> -->
-          <a href="/set_ups/<%= set_up.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_set_up/<%= set_up.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/set_ups/<%= set_up.id %>/edit" class="btn btn-warning">Edit</a></button>
+          <a href="/delete_set_up/<%= set_up.id %>" class="btn btn-danger" rel="nofollow">Delete</a></button>
+          </div>
         </td>
       </tr>
       <% end %>
