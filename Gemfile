@@ -45,5 +45,7 @@ group :development, :test do
   gem 'devise'
 
   gem 'starter_generators', :git => "http://github.com/rbetina/starter_generators.git"
+
+  gem 'ransack'
 end
 
