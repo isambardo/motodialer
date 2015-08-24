@@ -1,6 +1,7 @@
 class BikesController < ApplicationController
   def index
     @bikes = Bike.all
+    @user = current_user
   end
 
   def show
@@ -13,7 +14,7 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new
-    @bike.user_id = params[:user_id]
+    @bike.user_id = current_user.id
     @bike.year = params[:year]
     @bike.model = params[:model]
     @bike.manufacturer = params[:manufacturer]

@@ -16,7 +16,7 @@
         <th>Actions</th>
       </tr>
 
-      <% @bikes.each do |bike| %>
+      <% current_user.bikes.each do |bike| %>
       <tr>
         <td><%= bike.user_id %></td>
         <td><%= bike.year %></td>

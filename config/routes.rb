@@ -60,7 +60,7 @@ Rails.application.routes.draw do
   root 'bikes#index'
 
   # bum root code:
-  # root 'devise#new'
+  # root 'application#index'
 
   # root to: "devise/sessions#new"
 
