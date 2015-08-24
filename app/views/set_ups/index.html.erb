@@ -1,6 +1,5 @@
 <div class="page-header">
-  <h1>
-    Set ups
+  <h1><%= current_user.first_name %>'s set ups
     <a href="/set_ups/new" class="btn btn-lg btn-success">New Set up</a>
   </h1>
 </div>
@@ -40,10 +39,10 @@
 
       <% current_user.set_ups.each do |set_up| %>
       <tr>
-        <td><%= set_up.track_id %></td>
+        <td><%= set_up.track.name %></td>
         <td><%= set_up.laptime %></td>
         <td><%= set_up.rider_weight %></td>
-        <td><%= set_up.bike_id %></td>
+        <td><%= set_up.bike.model %></td>
         <td><%= set_up.comment %></td>
         <td><%= set_up.subjective_rating %></td>
         <td><%= set_up.conditions %></td>
