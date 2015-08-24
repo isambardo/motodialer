@@ -91,6 +91,10 @@
     end
   end
 
+  def find
+    render 'find'
+  end
+
   def destroy
     @set_up = SetUp.find(params[:id])
 

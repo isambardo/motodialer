@@ -33,6 +33,10 @@ Rails.application.routes.draw do
 
   # DELETE
   get "/delete_set_up/:id", :controller => "set_ups", :action => "destroy"
+
+  # SEARCH
+  get "/search", :controller => "set_ups", :action => "find"
+
   #------------------------------
 
   # Routes for the Bike resource:
@@ -54,7 +58,7 @@ Rails.application.routes.draw do
 
   # Routes for the Search resource:
 
-  get "/search", :controller => "search", :action => "find"
+  # get "/search", :controller => "search", :action => "find"
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
