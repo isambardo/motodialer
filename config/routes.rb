@@ -59,6 +59,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'bikes#index'
 
+  # bum root code:
+  # root 'devise#new'
+
+  # root to: "devise/sessions#new"
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -23,8 +23,9 @@
         <label for="track_id" class="control-label">
           Track
         </label>
+        <%= select_tag(:track_id, options_from_collection_for_select(Track.all, :id, :name, @set_up.track_id), :class => "form-control") %>
 
-        <input type="text" id="track_id" name="track_id" placeholder="Track" class="form-control" value="<%= @set_up.track_id %>">
+        <!-- <input type="text" id="track_id" name="track_id" placeholder="Track" class="form-control" value="<%= @set_up.track_id %>"> -->
       </div>
 
       <!-- Label and input for laptime -->
