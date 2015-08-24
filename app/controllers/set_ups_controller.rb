@@ -3,7 +3,12 @@
     @set_ups = SetUp.all
     @user = current_user
     @set_up = SetUp.new
-    @last_set_up = current_user.set_ups.last
+    if current_user.set_ups.last == nil
+      @last_set_up = SetUp.new
+      # @last_set_up = { id: 1, track_id: 1, laptime: 1.4, rider_weight: 180.0, bike_id: 4, comment: "novice group", subjective_rating: 5, conditions: "Dry", track_temperature: 76.0, ambient_temperature: 68.0, rear_tire_pressure: 30.0, front_tire_pressure: 30.0, rear_tire: "Dunlop Q3", front_tire: "Dunlop Q3", steering_head_angle: 24.0, front_suspension_preload: 5, front_suspension_compression: 5, front_suspension_damping: 5, front_suspension_spring_rate: 100.0, front_suspension_brand: "GSXR (KYB)", rear_suspension_preload: 5, rear_suspension_compression: 5, rear_suspension_damping: 5, rear_suspension_spring_rate: 750.0, rear_suspension_static_sag: 1.0, rear_suspension_sag: 3.0, rear_suspension_brand: "Ohlins", created_at: "2015-08-24 04:02:02", updated_at: "2015-08-24 04:02:57" }
+    else
+      @last_set_up = current_user.set_ups.last
+    end
   end
 
   def show
