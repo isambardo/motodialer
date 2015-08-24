@@ -2,6 +2,8 @@
   def index
     @set_ups = SetUp.all
     @user = current_user
+    @set_up = SetUp.new
+    @last_set_up = current_user.set_ups.last
   end
 
   def show
