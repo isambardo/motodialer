@@ -92,8 +92,8 @@
   end
 
   def find
-    @set_ups = SetUp.all
-    @user = current_user
+    @q = SetUp.ransack(params[:q])
+    @set_ups = @q.result(:distinct => true).includes(:bike, :track)
     @set_up = SetUp.new
     @last_set_up = current_user.set_ups.last
     render 'find'

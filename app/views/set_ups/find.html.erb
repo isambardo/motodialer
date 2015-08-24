@@ -1,14 +1,32 @@
-<h1>dummy search page</h1>
 <div class="page-header">
-  <h1>Everyone's set ups</h1><!--
+  <h1>All users' set ups</h1><!--
     <a href="/set_ups/new" class="btn btn-lg btn-success">New Set up</a> -->
 
 </div>
+
+<%= search_form_for @q do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :bike_model_cont, "Bike model" %>
+    <%= f.text_field :bike_model_cont, :class => "form-control", :placeholder => "Enter a few characters" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :track_name_cont, "Track name" %>
+    <%= f.text_field :track_name_cont, :class => "form-control", :placeholder => "Enter a few characters" %>
+  </div>
+
+  <%= f.submit :class => "btn btn-primary btn-block" %>
+
+  <a href="/search" class="btn btn-default btn-block">Clear filters</a>
+<% end %>
 
 <div class="row">
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
+        <th>User</th>
         <th>Track</th>
         <th>Bike</th>
         <th>Laptime</th>
@@ -35,7 +53,7 @@
         <th>St. sag</th>
         <th>Sag</th>
         <th>Shock</th>
-        <th>Actions</th>
+        <!-- <th>Actions</th> -->
       </tr>
 
 
@@ -45,6 +63,7 @@
 
       <% @set_ups.each do |set_up| %>
       <tr>
+         <td><%= set_up.bike.user.username %></td>
 
         <% if set_up.track_id == @comparison_set_up.track_id %>
           <td><%= set_up.track.name %></td>
@@ -177,14 +196,6 @@
           <td><b><%= set_up.rear_suspension_brand %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
         <% end %>
         <% @comparison_set_up = set_up %>
-        <td>
-          <div class="btn-group btn-group-xs" role="group" aria-label="...">
-
-          <!-- <a href="/set_ups/<%= set_up.id %>" class="btn btn-primary">Show</a> -->
-          <a href="/set_ups/<%= set_up.id %>/edit" class="btn btn-warning">Edit</a></button>
-          <a href="/delete_set_up/<%= set_up.id %>" class="btn btn-danger" rel="nofollow">Delete</a></button>
-          </div>
-        </td>
       </tr>
       <% end %>
     </table>
