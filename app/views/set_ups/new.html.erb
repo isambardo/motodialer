@@ -28,6 +28,16 @@
         <!-- <input type="text" id="track_id" name="track_id" placeholder="Track" class="form-control" value="<%= @set_up.track_id %>"> -->
       </div>
 
+      <!-- Label and input for bike_id -->
+      <div class="form-group">
+        <label for="bike_id" class="control-label">
+          Bike
+        </label>
+        <%= select_tag(:bike_id, options_from_collection_for_select(current_user.bikes.all, :id, :model, @set_up.bike_id), :class => "form-control") %>
+
+      <!--   <input type="text" id="bike_id" name="bike_id" placeholder="Bike" class="form-control" value="<%= @set_up.bike_id %>"> -->
+      </div>
+
       <!-- Label and input for laptime -->
       <div class="form-group">
         <label for="laptime" class="control-label">
@@ -46,14 +56,7 @@
         <input type="text" id="rider_weight" name="rider_weight" placeholder="Rider weight" class="form-control" value="<%= @set_up.rider_weight %>">
       </div>
 
-      <!-- Label and input for bike_id -->
-      <div class="form-group">
-        <label for="bike_id" class="control-label">
-          Bike
-        </label>
 
-        <input type="text" id="bike_id" name="bike_id" placeholder="Bike" class="form-control" value="<%= @set_up.bike_id %>">
-      </div>
 
       <!-- Label and input for comment -->
       <div class="form-group">
