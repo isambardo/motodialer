@@ -2,6 +2,8 @@ class BikesController < ApplicationController
   def index
     @bikes = Bike.all
     @user = current_user
+    @bike = Bike.new
+
   end
 
   def show
