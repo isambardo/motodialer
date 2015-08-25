@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h3>Track #<%= @track.id %></h3>
+  <h3>Track: <%= @track.name %></h3>
 </div>
 
 <div class="row">
@@ -7,11 +7,14 @@
     <dl class="dl-horizontal">
       <dt>Address</dt>
       <dd><%= @track.address %></dd>
-
-      <dt>Name</dt>
-      <dd><%= @track.name %></dd>
-
+      <dt>Insight</dt>
+      <dd>Riders at <%= @track.name %> typically use a fork spring that is <%= @spring_comparison %> the one they use at the average track and a shock spring that is <%= @shock_comparison %> the one they use at the average track.</dd>
+      <!-- <dd><%= @average_spring_rate_global %></dd>
+      <dd><%= @average_spring_rate_local %></dd> -->
     </dl>
+
+
+
 
     <div class="btn-group btn-group-justified">
       <a href="/tracks" class="btn btn-primary">

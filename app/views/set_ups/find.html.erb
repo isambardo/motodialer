@@ -1,5 +1,6 @@
 <div class="page-header">
-  <h1>Other users' set ups</h1><!--
+  <h1>Other users' set ups</h1>
+  <p>Sorted by track, laptime</p><!--
     <a href="/set_ups/new" class="btn btn-lg btn-success">New Set up</a> -->
 
 </div>
@@ -60,7 +61,7 @@
 
       <% @comparison_set_up = @set_ups.first %> -->
 
-
+      <% @set_ups = @set_ups.order('track_id DESC','laptime ASC')%>
       <% @set_ups.each do |set_up| %>
       <% if current_user.id != set_up.bike.user_id %>
       <tr>

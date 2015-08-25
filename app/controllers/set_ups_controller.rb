@@ -1,6 +1,7 @@
  class SetUpsController < ApplicationController
   def index
-    @set_ups = SetUp.all
+    @q = SetUp.ransack(params[:q])
+    @set_ups = @q.result(:distinct => true).includes(:bike, :track)
     @user = current_user
     @set_up = SetUp.new
     if current_user.set_ups.last == nil

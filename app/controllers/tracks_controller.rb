@@ -5,6 +5,27 @@ class TracksController < ApplicationController
 
   def show
     @track = Track.find(params[:id])
+    @set_ups =SetUp.all
+    @average_spring_rate_global = @set_ups.average(:front_suspension_spring_rate)
+    @this_tracks_set_ups = SetUp.where(:track_id => (params[:id]))
+    @average_spring_rate_local = @this_tracks_set_ups.average(:front_suspension_spring_rate)
+    if @average_spring_rate_global > @average_spring_rate_local
+      @spring_comparison = "harder than"
+    elsif @average_spring_rate_global < @average_spring_rate_local
+      @spring_comparison = "softer than"
+    else
+      @spring_comparison = "the same as"
+    end
+    @average_shock_rate_global = @set_ups.average(:rear_suspension_spring_rate)
+    @average_shock_rate_local = @this_tracks_set_ups.average(:rear_suspension_spring_rate)
+    if @average_shock_rate_global > @average_shock_rate_local
+      @shock_comparison = "harder than"
+    elsif @average_shock_rate_global < @average_shock_rate_local
+      @shock_comparison = "softer than"
+    else
+      @shock_comparison = "the same as"
+    end
+
   end
 
   def new
