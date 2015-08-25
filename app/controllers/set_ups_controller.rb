@@ -105,6 +105,7 @@
   end
 
   def readonly
+    @user = User.find(params[:id])
     render 'readonly'
   end
 

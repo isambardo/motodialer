@@ -64,7 +64,7 @@
       <% @set_ups.each do |set_up| %>
       <% if current_user.id != set_up.bike.user_id %>
       <tr>
-         <td><a href="/user/:id"><%= set_up.bike.user.username %></a></td>
+         <td><a href="/user/<%= set_up.bike.user.id %>"><%= set_up.bike.user.username %></a></td>
 
         <% if set_up.track_id == @comparison_set_up.track_id %>
           <td><%= set_up.track.name %></td>
@@ -196,9 +196,11 @@
         <% else %>
           <td><b><%= set_up.rear_suspension_brand %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
         <% end %>
+        <% @comparison_set_up = set_up %>
         <% else %>
         <% @comparison_set_up = set_up %>
         <% end %>
+
       </tr>
       <% end %>
     </table>
