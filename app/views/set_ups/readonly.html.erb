@@ -57,11 +57,11 @@
           <td><b><%= set_up.bike.model %></b></td>
         <% end %>
         <% if set_up.laptime == @comparison_set_up.laptime %>
-          <td><%= set_up.laptime.round(2) %> <span class="glyphicon glyphicon-resize-horizontal" style="color:gray" aria-hidden="true"></td>
+          <td><%= number_with_precision(set_up.laptime, :precision => 2) %> <span class="glyphicon glyphicon-resize-horizontal" style="color:gray" aria-hidden="true"></td>
         <% elsif set_up.laptime < @comparison_set_up.laptime %>
-          <td><b><%= set_up.laptime.round(2)%> <span class="glyphicon glyphicon-arrow-down" style="color:green" aria-hidden="true"></span></b></td>
+          <td><b><%= number_with_precision(set_up.laptime, :precision => 2) %> <span class="glyphicon glyphicon-arrow-down" style="color:green" aria-hidden="true"></span></b></td>
         <% elsif set_up.laptime > @comparison_set_up.laptime%>
-          <td><b><%= set_up.laptime.round(2)%> <span class="glyphicon glyphicon-arrow-up" style="color:red" aria-hidden="true"></span></b></td>
+          <td><b><%= number_with_precision(set_up.laptime, :precision => 2) %> <span class="glyphicon glyphicon-arrow-up" style="color:red" aria-hidden="true"></span></b></td>
         <% end %>
         <% if set_up.subjective_rating == @comparison_set_up.subjective_rating %>
           <td><%= set_up.subjective_rating %> <span class="glyphicon glyphicon-hand-right" style="color:gray" aria-hidden="true"></td>
@@ -73,8 +73,10 @@
           <td><%= set_up.comment %></td>
         <% if set_up.rider_weight == @comparison_set_up.rider_weight %>
           <td><%= set_up.rider_weight.round(0) %></td>
-        <% else %>
-          <td><b><%= set_up.rider_weight.round(0) %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% elsif set_up.rider_weight > @comparison_set_up.rider_weight %>
+          <td><b><%= set_up.rider_weight.round(0) %></b> <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></td>
+        <% elsif set_up.rider_weight < @comparison_set_up.rider_weight %>
+          <td><b><%= set_up.rider_weight.round(0) %></b> <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></td>
         <% end %>
         <% if set_up.conditions == @comparison_set_up.conditions %>
           <td><%= set_up.conditions %></td>
@@ -83,13 +85,17 @@
         <% end %>
         <% if set_up.track_temperature == @comparison_set_up.track_temperature %>
           <td><%= set_up.track_temperature.round(0) %></td>
-        <% else %>
-          <td><b><%= set_up.track_temperature.round(0) %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% elsif set_up.track_temperature > @comparison_set_up.track_temperature %>
+          <td><b><%= set_up.track_temperature.round(0) %></b> <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></td>
+        <% elsif set_up.track_temperature < @comparison_set_up.track_temperature %>
+          <td><b><%= set_up.track_temperature.round(0) %></b> <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></td>
         <% end %>
         <% if set_up.ambient_temperature == @comparison_set_up.ambient_temperature %>
           <td><%= set_up.ambient_temperature.round(0) %></td>
-        <% else %>
-          <td><b><%= set_up.ambient_temperature.round(0) %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% elsif set_up.ambient_temperature > @comparison_set_up.ambient_temperature%>
+          <td><b><%= set_up.ambient_temperature.round(0) %></b> <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></td>
+        <% elsif set_up.ambient_temperature < @comparison_set_up.ambient_temperature%>
+          <td><b><%= set_up.ambient_temperature.round(0) %></b> <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></td>
         <% end %>
         <% if set_up.rear_tire_pressure == @comparison_set_up.rear_tire_pressure %>
           <td><%= set_up.rear_tire_pressure.round(0) %></td>

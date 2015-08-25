@@ -68,7 +68,7 @@
           <td><a href="/user/<%= set_up.bike.user.id %>"><%= set_up.bike.user.username %></a></td>
           <td><%= set_up.track.name %></td>
           <td><%= set_up.bike.model %></td>
-          <td><%= set_up.laptime.round(2) %>
+          <td><%= number_with_precision(set_up.laptime, :precision => 2) %>
           <td><%= set_up.subjective_rating %></td>
           <td><%= set_up.comment %></td>
           <td><%= set_up.rider_weight.round(0) %></td>
