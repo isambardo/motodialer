@@ -7,3 +7,179 @@
 <p><%= display.year %> <%= display.manufacturer %> <%= display.model %></p>
 <% end %>
 
+<p><b>Set ups:</b></p>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Track</th>
+        <th>Bike</th>
+        <th>Laptime</th>
+        <th>Feel /10</th>
+        <th>Note</th>
+        <th>Wt.</th>
+        <th>Cnd.</th>
+        <th>Trk F&deg;</th>
+        <th>Air F&deg;</th>
+        <th>PSI (R)</th>
+        <th>PSI (F)</th>
+        <th>Tire (R)</th>
+        <th>Tire (F)</th>
+        <th>Hd ang.</th>
+        <th>Pl. (F)</th>
+        <th>Cp. (F)</th>
+        <th>Dp. (F)</th>
+        <th>Spr. (F)</th>
+        <th>Frk.</th>
+        <th>Pl. (R)</th>
+        <th>Cp. (R)</th>
+        <th>Dp. (R)</th>
+        <th>Spr. (R)</th>
+        <th>St. sag</th>
+        <th>Sag</th>
+        <th>Shock</th>
+      </tr>
+
+      <% @comparison_set_up = @user.set_ups.first %>
+
+      <% @user.set_ups.each do |set_up| %>
+      <tr>
+
+        <% if set_up.track_id == @comparison_set_up.track_id %>
+          <td><%= set_up.track.name %></td>
+        <% else %>
+          <td><b><%= set_up.track.name %></b></td>
+        <% end %>
+        <% if set_up.bike.model == @comparison_set_up.bike.model %>
+          <td><%= set_up.bike.model %></td>
+        <% else %>
+          <td><b><%= set_up.bike.model %></b></td>
+        <% end %>
+        <% if set_up.laptime == @comparison_set_up.laptime %>
+          <td><%= set_up.laptime.round(2) %> <span class="glyphicon glyphicon-resize-horizontal" style="color:gray" aria-hidden="true"></td>
+        <% elsif set_up.laptime < @comparison_set_up.laptime %>
+          <td><b><%= set_up.laptime.round(2)%> <span class="glyphicon glyphicon-arrow-down" style="color:green" aria-hidden="true"></span></b></td>
+        <% elsif set_up.laptime > @comparison_set_up.laptime%>
+          <td><b><%= set_up.laptime.round(2)%> <span class="glyphicon glyphicon-arrow-up" style="color:red" aria-hidden="true"></span></b></td>
+        <% end %>
+        <% if set_up.subjective_rating == @comparison_set_up.subjective_rating %>
+          <td><%= set_up.subjective_rating %> <span class="glyphicon glyphicon-hand-right" style="color:gray" aria-hidden="true"></td>
+        <% elsif set_up.subjective_rating < @comparison_set_up.subjective_rating%>
+          <td><b><%= set_up.subjective_rating %> <span class="glyphicon glyphicon-thumbs-down" style="color:red" aria-hidden="true"></b></td>
+        <% elsif set_up.subjective_rating > @comparison_set_up.subjective_rating%>
+          <td><b><%= set_up.subjective_rating%> <span class="glyphicon glyphicon-thumbs-up" style="color:green" aria-hidden="true"></span></b></td>
+        <% end %>
+          <td><%= set_up.comment %></td>
+        <% if set_up.rider_weight == @comparison_set_up.rider_weight %>
+          <td><%= set_up.rider_weight.round(0) %></td>
+        <% else %>
+          <td><b><%= set_up.rider_weight.round(0) %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.conditions == @comparison_set_up.conditions %>
+          <td><%= set_up.conditions %></td>
+        <% else %>
+          <td><b><%= set_up.conditions %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.track_temperature == @comparison_set_up.track_temperature %>
+          <td><%= set_up.track_temperature.round(0) %></td>
+        <% else %>
+          <td><b><%= set_up.track_temperature.round(0) %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.ambient_temperature == @comparison_set_up.ambient_temperature %>
+          <td><%= set_up.ambient_temperature.round(0) %></td>
+        <% else %>
+          <td><b><%= set_up.ambient_temperature.round(0) %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.rear_tire_pressure == @comparison_set_up.rear_tire_pressure %>
+          <td><%= set_up.rear_tire_pressure.round(0) %></td>
+        <% else %>
+          <td><b><%= set_up.rear_tire_pressure %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.front_tire_pressure == @comparison_set_up.front_tire_pressure %>
+          <td><%= set_up.front_tire_pressure.round(0) %></td>
+        <% else %>
+          <td><b><%= set_up.front_tire_pressure.round(0) %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.rear_tire == @comparison_set_up.rear_tire %>
+          <td><%= set_up.rear_tire %></td>
+        <% else %>
+          <td><b><%= set_up.rear_tire %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.front_tire == @comparison_set_up.front_tire %>
+          <td><%= set_up.front_tire %></td>
+        <% else %>
+          <td><b><%= set_up.front_tire %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.steering_head_angle == @comparison_set_up.steering_head_angle %>
+          <td><%= set_up.steering_head_angle %></td>
+        <% else %>
+          <td><b><%= set_up.steering_head_angle %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.front_suspension_preload == @comparison_set_up.front_suspension_preload %>
+          <td><%= set_up.front_suspension_preload %></td>
+        <% else %>
+          <td><b><%= set_up.front_suspension_preload %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.front_suspension_compression == @comparison_set_up.front_suspension_compression %>
+          <td><%= set_up.front_suspension_compression %></td>
+        <% else %>
+          <td><b><%= set_up.front_suspension_compression %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.front_suspension_damping == @comparison_set_up.front_suspension_damping %>
+          <td><%= set_up.front_suspension_damping %></td>
+        <% else %>
+          <td><b><%= set_up.front_suspension_damping %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.front_suspension_spring_rate == @comparison_set_up.front_suspension_spring_rate %>
+          <td><%= set_up.front_suspension_spring_rate.round(0) %></td>
+        <% else %>
+          <td><b><%= set_up.front_suspension_spring_rate.round(0) %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.front_suspension_brand == @comparison_set_up.front_suspension_brand %>
+          <td><%= set_up.front_suspension_brand %></td>
+        <% else %>
+          <td><b><%= set_up.front_suspension_brand %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.rear_suspension_preload == @comparison_set_up.rear_suspension_preload %>
+          <td><%= set_up.rear_suspension_preload %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_preload %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.rear_suspension_compression == @comparison_set_up.rear_suspension_compression %>
+          <td><%= set_up.rear_suspension_compression %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_compression %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.rear_suspension_damping == @comparison_set_up.rear_suspension_damping %>
+          <td><%= set_up.rear_suspension_damping %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_damping %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.rear_suspension_spring_rate == @comparison_set_up.rear_suspension_spring_rate %>
+          <td><%= set_up.rear_suspension_spring_rate.round(0) %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_spring_rate.round(0) %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.rear_suspension_static_sag == @comparison_set_up.rear_suspension_static_sag %>
+          <td><%= set_up.rear_suspension_static_sag %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_static_sag %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.rear_suspension_sag == @comparison_set_up.rear_suspension_sag %>
+          <td><%= set_up.rear_suspension_sag %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_sag %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% if set_up.rear_suspension_brand == @comparison_set_up.rear_suspension_brand %>
+          <td><%= set_up.rear_suspension_brand %></td>
+        <% else %>
+          <td><b><%= set_up.rear_suspension_brand %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+        <% end %>
+        <% @comparison_set_up = set_up %>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
