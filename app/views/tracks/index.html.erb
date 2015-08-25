@@ -9,17 +9,17 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Address</th>
         <th>Name</th>
+        <th>Address</th>
         <th>Actions</th>
       </tr>
 
       <% @tracks.each do |track| %>
       <tr>
-        <td><%= track.address %></td>
         <td><%= track.name %></td>
+        <td><%= track.address %></td>
         <td>
-          <a href="/tracks/<%= track.id %>" class="btn btn-primary">Show</a>
+          <a href="/tracks/<%= track.id %>" class="btn btn-primary">Show Insights</a>
           <a href="/tracks/<%= track.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_track/<%= track.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>

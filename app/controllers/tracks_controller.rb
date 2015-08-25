@@ -8,6 +8,8 @@ class TracksController < ApplicationController
     @set_ups =SetUp.all
     @average_spring_rate_global = @set_ups.average(:front_suspension_spring_rate)
     @this_tracks_set_ups = SetUp.where(:track_id => (params[:id]))
+    @global_count = @set_ups.count
+    @local_count = @this_tracks_set_ups.count
     @average_spring_rate_local = @this_tracks_set_ups.average(:front_suspension_spring_rate)
     if @average_spring_rate_global > @average_spring_rate_local
       @spring_comparison = "harder than"
