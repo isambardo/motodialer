@@ -1,2 +1,9 @@
-<h1>Dummy read only profile page for other user</h1>
-<h1><%= @user.username %></h1>
+<h1><img src="<%= @user.avatar %>" width="60"> <%= @user.username %></h1>
+<p><b>About me: </b><%= @user.bio %></p>
+<p><b>Email: </b><i><%= @user.email %></i></p>
+<p><b>Bikes:</b></p>
+
+<% @user.bikes.each do |display| %>
+<p><%= display.year %> <%= display.manufacturer %> <%= display.model %></p>
+<% end %>
+
