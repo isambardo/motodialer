@@ -1,8 +1,7 @@
-<div class="jumbotron">
-  <h1>Welcome to Motodialer!</h1>
-</div>
-
-<h2>Log in</h2>
+<p></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"><h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -27,4 +26,13 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links" %></div>
+    <div class="col-md-4">
+    <div class="thumbnail">
+      <img src="http://www.uvm.edu/~istokes/mc/frontsus.jpg" alt="...">
+      <div class="caption">
+        <h3><b>MOTODIALER</b></h3>
+        <p>Dial in and store your race motorcycle's suspension settings for any track</p>
+      </div>
+    </div>
+
