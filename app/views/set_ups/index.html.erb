@@ -83,7 +83,7 @@
         <% if set_up.conditions == @comparison_set_up.conditions %>
           <td><%= set_up.conditions %></td>
         <% else %>
-          <td><b><%= set_up.conditions %></b> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></td>
+          <td><b><%= set_up.conditions %> !</b></td>
         <% end %>
         <% if set_up.track_temperature == @comparison_set_up.track_temperature %>
           <td><%= set_up.track_temperature.round(0) %></td>
