@@ -26,7 +26,15 @@ class SetUp < ActiveRecord::Base
   validates :rear_suspension_static_sag, :numericality => true
   validates :rear_suspension_sag, :numericality => true
 
+  validate :laptime_60_seconds
 
-
+  def laptime_60_seconds
+    @laptime_minutes = laptime.to_i
+    @laptime_seconds = laptime - @laptime_minutes
+    # conditional if logic
+      if @laptime_seconds > 0.59
+       errors.add(:laptime, "must be expressed in minutes and seconds")
+      end
+  end
 
 end

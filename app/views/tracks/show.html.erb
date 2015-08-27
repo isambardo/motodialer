@@ -8,10 +8,14 @@
       <dt>Address</dt>
       <dd><%= @track.address %></dd>
       <dt>Insight</dt>
-      <dd>Riders at <%= @track.name %> typically use a fork spring that is <%= @spring_comparison %> the one they use at the average track and a shock spring that is <%= @shock_comparison %> the one they use at the average track.</dd>
-      <dd>This calculation is based on <%= @global_count.to_i %> total set-ups, including <%= @local_count.to_i %> at <%= @track.name %>.</dd>
-      <!-- <dd><%= @average_spring_rate_global %></dd>
-      <dd><%= @average_spring_rate_local %></dd> -->
+      <% if @global_count.nil? %>
+        NO SETUPS
+      <% else %>
+        <dd>Riders at <%= @track.name %> typically use a fork spring that is <%= @spring_comparison %> the one they use at the average track and a shock spring that is <%= @shock_comparison %> the one they use at the average track.</dd>
+        <dd>This calculation is based on <%= @global_count.to_i %> total set-ups, including <%= @local_count.to_i %> at <%= @track.name %>.</dd>
+        <!-- <dd><%= @average_spring_rate_global %></dd>
+        <dd><%= @average_spring_rate_local %></dd> -->
+      <% end %>
     </dl>
 
 
