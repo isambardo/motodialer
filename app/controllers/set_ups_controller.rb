@@ -3,6 +3,7 @@
     @q = SetUp.ransack(params[:q])
     @set_ups = @q.result(:distinct => true).includes(:bike, :track)
     @user = current_user
+    @current_bikes = current_user.bikes.last
     @set_up = SetUp.new
     if current_user.set_ups.last == nil
       @last_set_up = SetUp.new

@@ -1,3 +1,9 @@
+<% if @current_bikes.nil? %>
+<p></p>
+        <dd><b>You have to <a href="/bikes">add a bike</a> before you can add or view any set-ups of your own!</b></dd>
+<% else %>
+
+
 <div class="page-header">
   <h1><%= current_user.first_name %>'s set ups</h1> (scroll down to add new set-up)<!--
     <a href="/set_ups/new" class="btn btn-lg btn-success">New Set up</a> -->
@@ -201,6 +207,7 @@
     </div>
   <% end %>
 <% end %>
+
 
 <div class="page-header">
   <h3>Add Set Up</h3>
@@ -457,3 +464,4 @@
     </form>
   </div>
 </div>
+<% end %>

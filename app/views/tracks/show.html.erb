@@ -9,7 +9,7 @@
       <dd><%= @track.address %></dd>
       <dt>Insight</dt>
       <% if @global_count.nil? %>
-        NO SETUPS
+        <dd>There are no setups for this track, so we have no insights to share!</dd>
       <% else %>
         <dd>Riders at <%= @track.name %> typically use a fork spring that is <%= @spring_comparison %> the one they use at the average track and a shock spring that is <%= @shock_comparison %> the one they use at the average track.</dd>
         <dd>This calculation is based on <%= @global_count.to_i %> total set-ups, including <%= @local_count.to_i %> at <%= @track.name %>.</dd>
