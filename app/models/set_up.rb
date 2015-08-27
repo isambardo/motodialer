@@ -7,7 +7,7 @@ class SetUp < ActiveRecord::Base
   validates :bike_id, :presence => true
   validates :comment, length: { maximum: 200,
     too_long: "%{count} characters is the maximum allowed" }
-  validates :subjective_rating, numericality: { only_integer: true, less_than: 10, greater_than: -1 }
+  validates :subjective_rating, numericality: { only_integer: true, less_than: 11, greater_than: -1 }
   validates :conditions, inclusion: { in: %w(Dry Damp Wet),
     message: "%{value} is not a valid condition: enter Dry, Damp, or Wet" }
   validates :track_temperature, :numericality => true
