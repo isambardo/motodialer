@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   #Read only page on other users:
 
+
+
   get "/user/:id", :controller => "set_ups", :action => "readonly"
 
   # Routes for the Track resource:
@@ -67,7 +69,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'bikes#index'
+  root 'set_ups#index'
 
   # bum root code:
   # root 'application#index'
