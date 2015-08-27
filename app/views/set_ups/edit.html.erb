@@ -32,7 +32,7 @@
       <!-- Label and input for laptime -->
       <div class="form-group">
         <label for="laptime" class="control-label">
-          Laptime
+          Laptime (in minutes and seconds, e.g. X.XX )
         </label>
 
         <input type="text" id="laptime" name="laptime" placeholder="Laptime" class="form-control" value="<%= @set_up.laptime %>">
@@ -41,7 +41,7 @@
       <!-- Label and input for rider_weight -->
       <div class="form-group">
         <label for="rider_weight" class="control-label">
-          Rider weight
+          Rider weight  (in lbs)
         </label>
 
         <input type="text" id="rider_weight" name="rider_weight" placeholder="Rider weight" class="form-control" value="<%= @set_up.rider_weight %>">
@@ -69,7 +69,7 @@
       <!-- Label and input for subjective_rating -->
       <div class="form-group">
         <label for="subjective_rating" class="control-label">
-          Subjective rating
+          Subjective rating (Enter 0-10)
         </label>
 
         <input type="text" id="subjective_rating" name="subjective_rating" placeholder="Subjective rating" class="form-control" value="<%= @set_up.subjective_rating %>">
@@ -78,7 +78,7 @@
       <!-- Label and input for conditions -->
       <div class="form-group">
         <label for="conditions" class="control-label">
-          Conditions
+          Conditions (Enter 'Wet', 'Damp', or 'Dry')
         </label>
 
         <input type="text" id="conditions" name="conditions" placeholder="Conditions" class="form-control" value="<%= @set_up.conditions %>">
@@ -87,7 +87,7 @@
       <!-- Label and input for track_temperature -->
       <div class="form-group">
         <label for="track_temperature" class="control-label">
-          Track temperature
+          Track temperature (in Fahrenheit)
         </label>
 
         <input type="text" id="track_temperature" name="track_temperature" placeholder="Track temperature" class="form-control" value="<%= @set_up.track_temperature %>">
@@ -96,7 +96,7 @@
       <!-- Label and input for ambient_temperature -->
       <div class="form-group">
         <label for="ambient_temperature" class="control-label">
-          Ambient temperature
+          Ambient temperature (in Fahrenheit)
         </label>
 
         <input type="text" id="ambient_temperature" name="ambient_temperature" placeholder="Ambient temperature" class="form-control" value="<%= @set_up.ambient_temperature %>">
@@ -105,7 +105,7 @@
       <!-- Label and input for rear_tire_pressure -->
       <div class="form-group">
         <label for="rear_tire_pressure" class="control-label">
-          Rear tire pressure
+          Rear tire pressure (PSI)
         </label>
 
         <input type="text" id="rear_tire_pressure" name="rear_tire_pressure" placeholder="Rear tire pressure" class="form-control" value="<%= @set_up.rear_tire_pressure %>">
@@ -114,7 +114,7 @@
       <!-- Label and input for front_tire_pressure -->
       <div class="form-group">
         <label for="front_tire_pressure" class="control-label">
-          Front tire pressure
+          Front tire pressure (PSI)
         </label>
 
         <input type="text" id="front_tire_pressure" name="front_tire_pressure" placeholder="Front tire pressure" class="form-control" value="<%= @set_up.front_tire_pressure %>">
@@ -123,7 +123,7 @@
       <!-- Label and input for rear_tire -->
       <div class="form-group">
         <label for="rear_tire" class="control-label">
-          Rear tire
+          Rear tire (Enter make/model)
         </label>
 
         <input type="text" id="rear_tire" name="rear_tire" placeholder="Rear tire" class="form-control" value="<%= @set_up.rear_tire %>">
@@ -132,7 +132,7 @@
       <!-- Label and input for front_tire -->
       <div class="form-group">
         <label for="front_tire" class="control-label">
-          Front tire
+          Front tire (Enter make/model)
         </label>
 
         <input type="text" id="front_tire" name="front_tire" placeholder="Front tire" class="form-control" value="<%= @set_up.front_tire %>">
@@ -141,7 +141,7 @@
       <!-- Label and input for steering_head_angle -->
       <div class="form-group">
         <label for="steering_head_angle" class="control-label">
-          Steering head angle
+          Steering head angle (degrees from vertical)
         </label>
 
         <input type="text" id="steering_head_angle" name="steering_head_angle" placeholder="Steering head angle" class="form-control" value="<%= @set_up.steering_head_angle %>">
@@ -150,7 +150,7 @@
       <!-- Label and input for front_suspension_preload -->
       <div class="form-group">
         <label for="front_suspension_preload" class="control-label">
-          Front suspension preload
+          Front suspension preload (count clicks from CCW limit)
         </label>
 
         <input type="text" id="front_suspension_preload" name="front_suspension_preload" placeholder="Front suspension preload" class="form-control" value="<%= @set_up.front_suspension_preload %>">
@@ -159,7 +159,7 @@
       <!-- Label and input for front_suspension_compression -->
       <div class="form-group">
         <label for="front_suspension_compression" class="control-label">
-          Front suspension compression
+          Front suspension compression (count clicks from CCW limit)
         </label>
 
         <input type="text" id="front_suspension_compression" name="front_suspension_compression" placeholder="Front suspension compression" class="form-control" value="<%= @set_up.front_suspension_compression %>">
@@ -168,7 +168,7 @@
       <!-- Label and input for front_suspension_damping -->
       <div class="form-group">
         <label for="front_suspension_damping" class="control-label">
-          Front suspension damping
+          Front suspension damping (count clicks from CCW limit)
         </label>
 
         <input type="text" id="front_suspension_damping" name="front_suspension_damping" placeholder="Front suspension damping" class="form-control" value="<%= @set_up.front_suspension_damping %>">
@@ -177,7 +177,7 @@
       <!-- Label and input for front_suspension_spring_rate -->
       <div class="form-group">
         <label for="front_suspension_spring_rate" class="control-label">
-          Front suspension spring rate
+          Front suspension spring rate (PPI)
         </label>
 
         <input type="text" id="front_suspension_spring_rate" name="front_suspension_spring_rate" placeholder="Front suspension spring rate" class="form-control" value="<%= @set_up.front_suspension_spring_rate %>">
@@ -195,7 +195,7 @@
       <!-- Label and input for rear_suspension_preload -->
       <div class="form-group">
         <label for="rear_suspension_preload" class="control-label">
-          Rear suspension preload
+          Rear suspension preload (count clicks from CCW limit)
         </label>
 
         <input type="text" id="rear_suspension_preload" name="rear_suspension_preload" placeholder="Rear suspension preload" class="form-control" value="<%= @set_up.rear_suspension_preload %>">
@@ -204,7 +204,7 @@
       <!-- Label and input for rear_suspension_compression -->
       <div class="form-group">
         <label for="rear_suspension_compression" class="control-label">
-          Rear suspension compression
+          Rear suspension compression (count clicks from CCW limit)
         </label>
 
         <input type="text" id="rear_suspension_compression" name="rear_suspension_compression" placeholder="Rear suspension compression" class="form-control" value="<%= @set_up.rear_suspension_compression %>">
@@ -213,7 +213,7 @@
       <!-- Label and input for rear_suspension_damping -->
       <div class="form-group">
         <label for="rear_suspension_damping" class="control-label">
-          Rear suspension damping
+          Rear suspension damping (count clicks from CCW limit)
         </label>
 
         <input type="text" id="rear_suspension_damping" name="rear_suspension_damping" placeholder="Rear suspension damping" class="form-control" value="<%= @set_up.rear_suspension_damping %>">
@@ -222,7 +222,7 @@
       <!-- Label and input for rear_suspension_spring_rate -->
       <div class="form-group">
         <label for="rear_suspension_spring_rate" class="control-label">
-          Rear suspension spring rate
+          Rear suspension spring rate (PPI)
         </label>
 
         <input type="text" id="rear_suspension_spring_rate" name="rear_suspension_spring_rate" placeholder="Rear suspension spring rate" class="form-control" value="<%= @set_up.rear_suspension_spring_rate %>">
@@ -231,7 +231,7 @@
       <!-- Label and input for rear_suspension_static_sag -->
       <div class="form-group">
         <label for="rear_suspension_static_sag" class="control-label">
-          Rear suspension static sag
+          Rear suspension static sag (inches)
         </label>
 
         <input type="text" id="rear_suspension_static_sag" name="rear_suspension_static_sag" placeholder="Rear suspension static sag" class="form-control" value="<%= @set_up.rear_suspension_static_sag %>">
@@ -240,7 +240,7 @@
       <!-- Label and input for rear_suspension_sag -->
       <div class="form-group">
         <label for="rear_suspension_sag" class="control-label">
-          Rear suspension sag
+          Rear suspension sag (inches)
         </label>
 
         <input type="text" id="rear_suspension_sag" name="rear_suspension_sag" placeholder="Rear suspension sag" class="form-control" value="<%= @set_up.rear_suspension_sag %>">
